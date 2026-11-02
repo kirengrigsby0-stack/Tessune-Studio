@@ -864,3 +864,35 @@ a {
         letter-spacing: -2px;
     }
 }
+
+/* TESSUNE STUDIO — ICON SYSTEM */
+
+.icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+.icon-arrow {
+    transition: transform 0.25s ease;
+}
+
+a:hover .icon-arrow,
+button:hover .icon-arrow {
+    transform: translateX(4px);
+}
+
+/* Consistent icon alignment */
+.icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
