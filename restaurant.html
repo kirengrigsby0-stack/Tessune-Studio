@@ -4,422 +4,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAISON | Modern Dining</title>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #11110f;
-    color: #f5f0e8;
-    font-family: 'DM Sans', sans-serif;
-}
-
-header {
-    height: 85px;
-    padding: 0 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #11110f;
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    letter-spacing: 4px;
-}
-
-nav {
-    display: flex;
-    gap: 35px;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: #ddd5c8;
-    font-size: 13px;
-    transition: .3s;
-}
-
-nav a:hover {
-    color: #c8a879;
-}
-
-.nav-button {
-    border: 1px solid #c8a879;
-    padding: 12px 20px;
-    color: #c8a879;
-}
-
-.hero {
-    min-height: 700px;
-    display: flex;
-    align-items: center;
-    padding: 100px 10%;
-    background:
-    linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.15)),
-    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4");
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-content {
-    max-width: 700px;
-}
-
-.eyebrow {
-    color: #c8a879;
-    letter-spacing: 4px;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(55px, 7vw, 90px);
-    line-height: 1.08;
-    margin: 25px 0;
-    font-weight: 400;
-}
-
-.hero p {
-    color: #ddd;
-    font-size: 17px;
-    line-height: 1.8;
-    max-width: 500px;
-}
-
-.button {
-    display: inline-block;
-    margin-top: 35px;
-    padding: 17px 32px;
-    background: #c8a879;
-    color: #111;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
-    transition: .3s;
-}
-
-.button:hover {
-    background: #e2c99f;
-    transform: translateY(-3px);
-}
-
-section {
-    padding: 110px 10%;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 55px;
-}
-
-.section-heading h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 400;
-    margin-top: 15px;
-}
-
-.section-heading p {
-    color: #aaa;
-    margin-top: 15px;
-    line-height: 1.7;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 65px;
-    align-items: center;
-}
-
-.about-image {
-    height: 450px;
-    background: url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0");
-    background-size: cover;
-    background-position: center;
-}
-
-.about-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 45px;
-    font-weight: 400;
-    margin: 20px 0;
-}
-
-.about-text p {
-    color: #aaa;
-    line-height: 1.9;
-    margin-bottom: 15px;
-}
-
-.menu-section {
-    background: #191916;
-}
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 950px;
-    margin: auto;
-}
-
-.menu-item {
-    border-bottom: 1px solid #39352e;
-    padding: 20px 0;
-}
-
-.menu-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 23px;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-
-.menu-item p {
-    color: #999;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.price {
-    color: #c8a879;
-    margin-top: 12px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.gallery img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: .4s;
-}
-
-.gallery img:hover {
-    transform: scale(1.02);
-}
-
-.reservation {
-    text-align: center;
-    background:
-    linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
-    url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0");
-    background-size: cover;
-    background-position: center;
-}
-
-.reservation h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 55px;
-    font-weight: 400;
-    margin: 20px 0;
-}
-
-.reservation p {
-    color: #ddd;
-    line-height: 1.8;
-}
-
-footer {
-    background: #090908;
-    padding: 60px 10% 25px;
-    text-align: center;
-}
-
-footer h2 {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 5px;
-    font-size: 30px;
-}
-
-footer p {
-    color: #888;
-    font-size: 13px;
-    margin-top: 15px;
-}
-
-.footer-bottom {
-    margin-top: 40px;
-    border-top: 1px solid #292621;
-    padding-top: 25px;
-}
-
-@media(max-width: 750px) {
-    header {
-        padding: 20px 6%;
-        height: auto;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 11px;
-    }
-
-    .hero {
-        min-height: 600px;
-        padding: 70px 7%;
-    }
-
-    section {
-        padding: 75px 7%;
-    }
-
-    .about-grid,
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img {
-        height: 260px;
-    }
-
-    .section-heading h2 {
-        font-size: 36px;
-    }
-}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{background:#11110f;color:#f5f0e8;font-family:'DM Sans',sans-serif}
+header{height:85px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;background:#11110f}
+.logo{font-family:'Playfair Display',serif;font-size:30px;letter-spacing:4px}
+nav{display:flex;gap:35px;align-items:center}
+nav a{text-decoration:none;color:#ddd5c8;font-size:13px;transition:.3s}
+nav a:hover{color:#c8a879}
+.nav-button{border:1px solid #c8a879;padding:12px 20px;color:#c8a879}
+.hero{min-height:700px;display:flex;align-items:center;padding:100px 10%;background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.15)),url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4");background-size:cover;background-position:center}
+.hero-content{max-width:700px}
+.eyebrow{color:#c8a879;letter-spacing:4px;font-size:12px;text-transform:uppercase}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(55px,7vw,90px);line-height:1.08;margin:25px 0;font-weight:400}
+.hero p{color:#ddd;font-size:17px;line-height:1.8;max-width:500px}
+.button{display:inline-block;margin-top:35px;padding:17px 32px;background:#c8a879;color:#111;text-decoration:none;font-size:13px;font-weight:700;transition:.3s}
+.button:hover{background:#e2c99f;transform:translateY(-3px)}
+section{padding:110px 10%}
+.section-heading{text-align:center;margin-bottom:55px}
+.section-heading h2{font-family:'Playfair Display',serif;font-size:48px;font-weight:400;margin-top:15px}
+.section-heading p{color:#aaa;margin-top:15px;line-height:1.7}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.about-image{height:450px;background:url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0");background-size:cover;background-position:center}
+.about-text h2{font-family:'Playfair Display',serif;font-size:45px;font-weight:400;margin:20px 0}
+.about-text p{color:#aaa;line-height:1.9;margin-bottom:15px}
+.menu-section{background:#191916}
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;max-width:950px;margin:auto}
+.menu-item{border-bottom:1px solid #39352e;padding:20px 0}
+.menu-item h3{font-family:'Playfair Display',serif;font-size:23px;font-weight:400;margin-bottom:10px}
+.menu-item p{color:#999;font-size:14px;line-height:1.6}
+.price{color:#c8a879;margin-top:12px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gallery img{width:100%;height:300px;object-fit:cover;transition:.4s}
+.gallery img:hover{transform:scale(1.02)}
+.reservation{text-align:center;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0");background-size:cover;background-position:center}
+.reservation h2{font-family:'Playfair Display',serif;font-size:55px;font-weight:400;margin:20px 0}
+.reservation p{color:#ddd;line-height:1.8}
+footer{background:#090908;padding:60px 10% 25px;text-align:center}
+footer h2{font-family:'Playfair Display',serif;letter-spacing:5px;font-size:30px}
+footer p{color:#888;font-size:13px;margin-top:15px}
+.footer-bottom{margin-top:40px;border-top:1px solid #292621;padding-top:25px}
+.arrow-icon{width:14px;height:14px;display:inline-block;vertical-align:middle;margin-left:5px;transition:transform .3s ease}
+.button:hover .arrow-icon,.nav-button:hover .arrow-icon{transform:translate(3px,-3px)}
+@media(max-width:750px){header{padding:20px 6%;height:auto;flex-direction:column;gap:20px}nav{gap:15px;flex-wrap:wrap;justify-content:center}nav a{font-size:11px}.hero{min-height:600px;padding:70px 7%}section{padding:75px 7%}.about-grid,.menu-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.gallery img{height:260px}.section-heading h2{font-size:36px}}
 </style>
 </head>
-
 <body>
-
-<header>
-    <div class="logo">MAISON.</div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">Our Story</a>
-        <a href="#menu">Menu</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#reservations" class="nav-button">Reservations</a>
-    </nav>
-</header>
-
-<section class="hero" id="home">
-    <div class="hero-content">
-        <span class="eyebrow">An Elevated Dining Experience</span>
-        <h1>Where Every Meal Becomes an Experience.</h1>
-        <p>Discover thoughtfully crafted dishes, exceptional ingredients, and an atmosphere designed to make every visit memorable.</p>
-        <a href="#menu" class="button">EXPLORE OUR MENU</a>
-    </div>
-</section>
-
-<section id="about">
-    <div class="about-grid">
-        <div class="about-image"></div>
-
-        <div class="about-text">
-            <span class="eyebrow">Our Story</span>
-            <h2>Passion Served on Every Plate.</h2>
-            <p>At MAISON, dining is about more than food. It's about bringing people together through unforgettable flavors and carefully crafted experiences.</p>
-            <p>Our philosophy combines fresh ingredients, thoughtful preparation, and a welcoming atmosphere.</p>
-            <a href="#reservations" class="button">VISIT MAISON</a>
-        </div>
-    </div>
-</section>
-
-<section class="menu-section" id="menu">
-    <div class="section-heading">
-        <span class="eyebrow">Discover Our Selection</span>
-        <h2>Our Menu</h2>
-        <p>A selection of dishes inspired by quality ingredients and timeless techniques.</p>
-    </div>
-
-    <div class="menu-grid">
-
-        <div class="menu-item">
-            <h3>Roasted Garlic Bruschetta</h3>
-            <p>Toasted artisan bread, roasted garlic, tomatoes, and fresh herbs.</p>
-            <div class="price">$12</div>
-        </div>
-
-        <div class="menu-item">
-            <h3>Classic Burrata</h3>
-            <p>Fresh burrata, seasonal tomatoes, basil, and olive oil.</p>
-            <div class="price">$16</div>
-        </div>
-
-        <div class="menu-item">
-            <h3>Herb-Crusted Salmon</h3>
-            <p>Pan-seared salmon with seasonal vegetables and lemon butter.</p>
-            <div class="price">$29</div>
-        </div>
-
-        <div class="menu-item">
-            <h3>Filet Mignon</h3>
-            <p>Premium beef, roasted potatoes, and house-made sauce.</p>
-            <div class="price">$38</div>
-        </div>
-
-        <div class="menu-item">
-            <h3>Wild Mushroom Risotto</h3>
-            <p>Creamy arborio rice, wild mushrooms, and parmesan.</p>
-            <div class="price">$24</div>
-        </div>
-
-        <div class="menu-item">
-            <h3>Chocolate Fondant</h3>
-            <p>Warm chocolate dessert with vanilla cream.</p>
-            <div class="price">$13</div>
-        </div>
-
-    </div>
-</section>
-
-<section id="gallery">
-    <div class="section-heading">
-        <span class="eyebrow">The Atmosphere</span>
-        <h2>A Taste of MAISON</h2>
-    </div>
-
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0" alt="Restaurant dining table">
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Beautifully presented food">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Restaurant interior">
-    </div>
-</section>
-
-<section class="reservation" id="reservations">
-    <span class="eyebrow">Your Table Awaits</span>
-    <h2>Make It a Night to Remember.</h2>
-    <p>Join us for an unforgettable dining experience.</p>
-    <a href="mailto:reservations@example.com" class="button">CONTACT US</a>
-</section>
-
-<footer>
-    <h2>MAISON.</h2>
-    <p>Exceptional food. Unforgettable atmosphere.</p>
-
-    <div class="footer-bottom">
-        <p>© 2026 MAISON. Demonstration website by Nexora Digital.</p>
-    </div>
-</footer>
-
-</body>
-</html>
+<header><div class="logo">MAISON.</div><nav><a href="#home">Home</a><a href="#about">Our Story</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#reservations" class="nav-button">Reservations</a></nav></header>
+<section class="hero" id="home"><div class="hero-content"><span class="eyebrow">An Elevated Dining Experience</span><h1>Where Every Meal Becomes an Experience.</h1><p>Discover thoughtfully crafted dishes, exceptional ingredients, and an atmosphere designed to make every visit memorable.</p><a href="#menu" class="button">EXPLORE OUR MENU <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a></div></section>
+<section id="about"><div class="about-grid"><div class="about-image"></div><div class="about-text"><span class="eyebrow">Our Story</span><h2>Passion Served on Every Plate.</h2><p>At MAISON, dining is about more than food. It's about bringing people together through unforgettable flavors and carefully crafted experiences.</p><p>Our philosophy combines fresh ingredients, thoughtful preparation, and a welcoming atmosphere.</p><a href="#reservations" class="button">VISIT MAISON <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a></div></div></section>
+<section class="menu-section" id="menu"><div class="section-heading"><span class="eyebrow">Discover Our Selection</span><h2>Our Menu</h2><p>A selection of dishes inspired by quality ingredients and timeless techniques.</p></div><div class="menu-grid">
+<div class="menu-item"><h3>Roasted Garlic Bruschetta</h3><p>Toasted artisan bread, roasted garlic, tomatoes, and fresh herbs.</p><div class="price">$12</div></div>
+<div class="menu-item"><h3>Classic Burrata</h3><p>Fresh burrata, seasonal tomatoes, basil, and olive oil.</p><div class="price">$16</div></div>
+<div class="menu-item"><h3>Herb-Crusted Salmon</h3><p>Pan-seared salmon with seasonal vegetables and lemon butter.</p><div class="price">$29</div></div>
+<div class="menu-item"><h3>Filet Mignon</h3><p>Premium beef, roasted potatoes, and house-made sauce.</p><div class="price">$38</div></div>
+<div class="menu-item"><h3>Wild Mushroom Risotto</h3><p>Creamy arborio rice, wild mushrooms, and parmesan.</p><div class="price">$24</div></div>
+<div class="menu-item"><h3>Chocolate Fondant</h3><p>Warm chocolate dessert with vanilla cream.</p><div class="price">$13</div></div>
+</div></section>
+<section id="gallery"><div class="section-heading"><span class="eyebrow">The Atmosphere</span><h2>A Taste of MAISON</h2></div><div class="gallery"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0" alt="Restaurant dining table"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Beautifully presented food"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Restaurant interior"></div></section>
+<section class="reservation" id="reservations"><span class="eyebrow">Your Table Awaits</span><h2>Make It a Night to Remember.</h2><p>Join us for an unforgettable dining experience.</p><a href="mailto:reservations@example.com" class="button">CONTACT US <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a></section>
+<footer><h2>MAISON.</h2><p>Exceptional food. Unforgettable atmosphere.</p><div class="footer-bottom"><p>© 2026 MAISON. Demonstration website by Tessune Studio.</p></div></footer>
+</body></html>

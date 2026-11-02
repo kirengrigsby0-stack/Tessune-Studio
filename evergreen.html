@@ -1,426 +1,65 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EVERGREEN | Outdoor Living</title>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'DM Sans', sans-serif;
-    background: #f7f6f1;
-    color: #26372b;
-}
-
-header {
-    height: 85px;
-    padding: 0 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #f7f6f1;
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 27px;
-    letter-spacing: 2px;
-    font-weight: 700;
-}
-
-.logo span {
-    color: #718765;
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #465348;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: .3s;
-}
-
-nav a:hover {
-    color: #829675;
-}
-
-.hero {
-    min-height: 690px;
-    display: flex;
-    align-items: center;
-    padding: 100px 8%;
-    background:
-        linear-gradient(90deg, rgba(20,34,25,.82), rgba(20,34,25,.12)),
-        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85');
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-.hero-content {
-    max-width: 650px;
-}
-
-.eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    font-weight: 700;
-    color: #c3d0b5;
-    margin-bottom: 25px;
-}
-
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(48px, 7vw, 82px);
-    line-height: 1.08;
-    font-weight: 500;
-    margin-bottom: 25px;
-}
-
-.hero p {
-    max-width: 480px;
-    line-height: 1.9;
-    color: #e0e5dc;
-    margin-bottom: 35px;
-}
-
-.button {
-    display: inline-block;
-    background: #819675;
-    color: white;
-    text-decoration: none;
-    padding: 16px 27px;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    transition: .3s;
-}
-
-.button:hover {
-    background: #637a57;
-    transform: translateY(-3px);
-}
-
-section {
-    padding: 100px 8%;
-}
-
-.heading {
-    margin-bottom: 45px;
-}
-
-.heading .eyebrow {
-    color: #819675;
-    margin-bottom: 15px;
-}
-
-.heading h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 46px;
-    font-weight: 500;
-}
-
-.services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.service-card {
-    background: white;
-    overflow: hidden;
-    transition: .3s;
-}
-
-.service-card:hover {
-    transform: translateY(-6px);
-}
-
-.service-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.service-info {
-    padding: 28px;
-}
-
-.service-info h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    margin-bottom: 12px;
-    font-weight: 500;
-}
-
-.service-info p {
-    color: #727a70;
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.about {
-    background: #e9ede4;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.about img {
-    width: 100%;
-    height: 470px;
-    object-fit: cover;
-}
-
-.about-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 47px;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-bottom: 25px;
-}
-
-.about-text p {
-    color: #667064;
-    line-height: 1.9;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    gap: 18px;
-}
-
-.gallery img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.contact {
-    background: #26372b;
-    color: white;
-    text-align: center;
-}
-
-.contact .eyebrow {
-    color: #bdcdb2;
-}
-
-.contact h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-.contact p {
-    color: #d1d8ce;
-    margin-bottom: 30px;
-    line-height: 1.8;
-}
-
-footer {
-    background: #1c2b20;
-    color: #bdc6b9;
-    padding: 35px 8%;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-
-@media (max-width: 850px) {
-    .services {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .about {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    header {
-        height: auto;
-        padding: 20px 6%;
-        flex-wrap: wrap;
-        gap: 18px;
-    }
-
-    nav {
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .hero {
-        min-height: 600px;
-        padding: 75px 6%;
-    }
-
-    section {
-        padding: 75px 6%;
-    }
-
-    .services,
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img {
-        height: 260px;
-    }
-
-    footer {
-        flex-direction: column;
-    }
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#f7f6f1;color:#26372b}
+header{height:85px;padding:0 8%;display:flex;justify-content:space-between;align-items:center;background:#f7f6f1}
+.logo{font-family:'Playfair Display',serif;font-size:27px;letter-spacing:2px;font-weight:700}
+.logo span{color:#718765}
+nav{display:flex;gap:30px}
+nav a{text-decoration:none;color:#465348;font-size:12px;font-weight:600;letter-spacing:1px;transition:.3s}
+nav a:hover{color:#829675}
+.hero{min-height:690px;display:flex;align-items:center;padding:100px 8%;background:linear-gradient(90deg,rgba(20,34,25,.82),rgba(20,34,25,.12)),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85');background-size:cover;background-position:center;color:white}
+.hero-content{max-width:650px}
+.eyebrow{font-size:11px;letter-spacing:4px;font-weight:700;color:#c3d0b5;margin-bottom:25px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(48px,7vw,82px);line-height:1.08;font-weight:500;margin-bottom:25px}
+.hero p{max-width:480px;line-height:1.9;color:#e0e5dc;margin-bottom:35px}
+.button{display:inline-block;background:#819675;color:white;text-decoration:none;padding:16px 27px;font-size:11px;letter-spacing:1.5px;font-weight:700;transition:.3s}
+.button:hover{background:#637a57;transform:translateY(-3px)}
+section{padding:100px 8%}
+.heading{margin-bottom:45px}
+.heading .eyebrow{color:#819675;margin-bottom:15px}
+.heading h2{font-family:'Playfair Display',serif;font-size:46px;font-weight:500}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.service-card{background:white;overflow:hidden;transition:.3s}
+.service-card:hover{transform:translateY(-6px)}
+.service-card img{width:100%;height:250px;object-fit:cover}
+.service-info{padding:28px}
+.service-info h3{font-family:'Playfair Display',serif;font-size:25px;margin-bottom:12px;font-weight:500}
+.service-info p{color:#727a70;font-size:13px;line-height:1.8}
+.about{background:#e9ede4;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about img{width:100%;height:470px;object-fit:cover}
+.about-text h2{font-family:'Playfair Display',serif;font-size:47px;font-weight:500;line-height:1.2;margin-bottom:25px}
+.about-text p{color:#667064;line-height:1.9;margin-bottom:20px;font-size:14px}
+.gallery{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px}
+.gallery img{width:100%;height:300px;object-fit:cover}
+.contact{background:#26372b;color:white;text-align:center}
+.contact .eyebrow{color:#bdcdb2}
+.contact h2{font-family:'Playfair Display',serif;font-size:48px;font-weight:500;margin-bottom:20px}
+.contact p{color:#d1d8ce;margin-bottom:30px;line-height:1.8}
+footer{background:#1c2b20;color:#bdc6b9;padding:35px 8%;display:flex;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:1px}
+.arrow-icon{width:14px;height:14px;display:inline-block;vertical-align:middle;margin-left:5px;transition:transform .3s ease}
+.button:hover .arrow-icon{transform:translate(3px,-3px)}
+@media(max-width:850px){.services{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){header{height:auto;padding:20px 6%;flex-wrap:wrap;gap:18px}nav{gap:15px;flex-wrap:wrap}.hero{min-height:600px;padding:75px 6%}section{padding:75px 6%}.services,.gallery{grid-template-columns:1fr}.gallery img{height:260px}footer{flex-direction:column}}
 </style>
 </head>
-
 <body>
-
-<header>
-    <div class="logo">EVERGREEN<span>.</span></div>
-
-    <nav>
-        <a href="#home">HOME</a>
-        <a href="#services">SERVICES</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
-</header>
-
-<section class="hero" id="home">
-    <div class="hero-content">
-        <div class="eyebrow">LANDSCAPE DESIGN & OUTDOOR LIVING</div>
-
-        <h1>BRING YOUR<br>OUTDOORS TO LIFE.</h1>
-
-        <p>
-            Thoughtfully designed outdoor spaces that bring
-            beauty, comfort, and lasting value to your home.
-        </p>
-
-        <a href="#services" class="button">EXPLORE OUR SERVICES ↗</a>
-    </div>
-</section>
-
-<section id="services">
-    <div class="heading">
-        <div class="eyebrow">WHAT WE DO</div>
-        <h2>Designed Around You.</h2>
-    </div>
-
-    <div class="services">
-
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85" alt="Beautiful landscaped home">
-            <div class="service-info">
-                <h3>Landscape Design</h3>
-                <p>Beautifully planned landscapes that complement your property and create a welcoming outdoor environment.</p>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Modern outdoor living space">
-            <div class="service-info">
-                <h3>Outdoor Living</h3>
-                <p>Transform your backyard into a comfortable space for relaxing, entertaining, and enjoying the outdoors.</p>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=85" alt="Garden and planting">
-            <div class="service-info">
-                <h3>Garden & Planting</h3>
-                <p>Carefully selected plants and thoughtful arrangements that add natural character to your property.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section class="about" id="about">
-    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85" alt="Beautiful modern home and garden">
-
-    <div class="about-text">
-        <div class="eyebrow">OUR PHILOSOPHY</div>
-
-        <h2>OUTDOOR SPACES.<br>THOUGHTFULLY CREATED.</h2>
-
-        <p>
-            We believe your outdoor space should feel like a
-            natural extension of your home.
-        </p>
-
-        <p>
-            From the first design idea to the finishing touches,
-            every detail should contribute to an environment
-            that feels welcoming, balanced, and uniquely yours.
-        </p>
-
-        <a href="#contact" class="button">START YOUR PROJECT ↗</a>
-    </div>
-</section>
-
-<section>
-    <div class="heading">
-        <div class="eyebrow">A LOOK AT THE POSSIBILITIES</div>
-        <h2>Inspired Outdoors.</h2>
-    </div>
-
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=85" alt="Modern landscaped home">
-        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Outdoor patio">
-        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=85" alt="Garden and modern architecture">
-    </div>
-</section>
-
-<section class="contact" id="contact">
-    <div class="eyebrow">LET'S CREATE SOMETHING BEAUTIFUL</div>
-
-    <h2>YOUR OUTDOOR SPACE<br>STARTS HERE.</h2>
-
-    <p>
-        Have a project in mind? We'd love to hear about it.
-    </p>
-
-    <a href="mailto:info@example.com" class="button">GET IN TOUCH ↗</a>
-</section>
-
-<footer>
-    <div>EVERGREEN OUTDOORS</div>
-    <div>FICTIONAL WEBSITE DEMO BY NEXORA DIGITAL</div>
-    <div>© 2026 EVERGREEN</div>
-</footer>
-
-</body>
-</html>
+<header><div class="logo">EVERGREEN<span>.</span></div><nav><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav></header>
+<section class="hero" id="home"><div class="hero-content"><div class="eyebrow">LANDSCAPE DESIGN & OUTDOOR LIVING</div><h1>BRING YOUR<br>OUTDOORS TO LIFE.</h1><p>Thoughtfully designed outdoor spaces that bring beauty, comfort, and lasting value to your home.</p><a href="#services" class="button">EXPLORE OUR SERVICES <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a></div></section>
+<section id="services"><div class="heading"><div class="eyebrow">WHAT WE DO</div><h2>Designed Around You.</h2></div><div class="services">
+<div class="service-card"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85" alt="Beautiful landscaped home"><div class="service-info"><h3>Landscape Design</h3><p>Beautifully planned landscapes that complement your property and create a welcoming outdoor environment.</p></div></div>
+<div class="service-card"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Modern outdoor living space"><div class="service-info"><h3>Outdoor Living</h3><p>Transform your backyard into a comfortable space for relaxing, entertaining, and enjoying the outdoors.</p></div></div>
+<div class="service-card"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=85" alt="Garden and planting"><div class="service-info"><h3>Garden & Planting</h3><p>Carefully selected plants and thoughtful arrangements that add natural character to your property.</p></div></div>
+</div></section>
+<section class="about" id="about"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85" alt="Beautiful modern home and garden"><div class="about-text"><div class="eyebrow">OUR PHILOSOPHY</div><h2>OUTDOOR SPACES.<br>THOUGHTFULLY CREATED.</h2><p>We believe your outdoor space should feel like a natural extension of your home.</p><p>From the first design idea to the finishing touches, every detail should contribute to an environment that feels welcoming, balanced, and uniquely yours.</p><a href="#contact" class="button">START YOUR PROJECT <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a></div></section>
+<section><div class="heading"><div class="eyebrow">A LOOK AT THE POSSIBILITIES</div><h2>Inspired Outdoors.</h2></div><div class="gallery"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=85" alt="Modern landscaped home"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Outdoor patio"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=85" alt="Garden and modern architecture"></div></section>
+<section class="contact" id="contact"><div class="eyebrow">LET'S CREATE SOMETHING BEAUTIFUL</div><h2>YOUR OUTDOOR SPACE<br>STARTS HERE.</h2><p>Have a project in mind? We'd love to hear about it.</p><a href="mailto:info@example.com" class="button">GET IN TOUCH <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a></section>
+<footer><div>EVERGREEN OUTDOORS</div><div>FICTIONAL WEBSITE DEMO BY TESSUNE STUDIO</div><div>© 2026 EVERGREEN</div></footer>
+</body></html>
